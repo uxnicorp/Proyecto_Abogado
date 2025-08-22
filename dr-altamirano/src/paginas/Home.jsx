@@ -1,5 +1,7 @@
 import "./css/Home.css";
 import Testimonios from "../componentes-generales/Testimonios";
+import { Link } from "react-router-dom";
+
 
 const Home = () => {
   return (
@@ -9,7 +11,7 @@ const Home = () => {
           <p className="subtitle">Su Abogada de mayor confianza desde 2005</p>
           <h1 className="title">Servicios legales de primer nivel</h1>
           <div className="btn-wrapper">
-            <a href="/contacto" className="btn-home">
+            <a href="/servicios" className="btn-home">
               SERVICIOS
             </a>
           </div>
