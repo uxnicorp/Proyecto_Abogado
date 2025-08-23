@@ -1,8 +1,14 @@
 import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./css/Servicios.css";
 
 const Servicios = () => {
   const rootRef = useRef(null);
+  const navigate = useNavigate(); 
+
+  const irAFormulario = (servicio) => {
+    navigate(`/formulario?service=${encodeURIComponent(servicio)}`);
+  };
 
   useEffect(() => {
     if (!rootRef.current) return;
@@ -12,7 +18,6 @@ const Servicios = () => {
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (prefersReduced) {
-      
       rootRef.current.querySelectorAll(".reveal").forEach((el) => {
         el.classList.add("in");
       });
@@ -82,9 +87,14 @@ const Servicios = () => {
               profesionalismo, cercanía y compromiso, garantizando soluciones
               jurídicas claras y efectivas.
             </p>
-            <a href="/*" className="btn-home">
+            
+            <button
+              type="button"
+              className="btn-home"
+              onClick={() => irAFormulario("Derecho civil")}
+            >
               Asesorarme
-            </a>
+            </button>
           </div>
 
           <div className="detalle-item card-quiet stagger">
@@ -98,9 +108,14 @@ const Servicios = () => {
               querellas, denuncias y estrategias de defensa, actuando con
               compromiso, ética y firmeza en cada caso.
             </p>
-            <a href="/*" className="btn-home">
+            
+            <button
+              type="button"
+              className="btn-home"
+              onClick={() => irAFormulario("Derecho penal")}
+            >
               Asesorarme
-            </a>
+            </button>
           </div>
 
           <div className="detalle-item card-quiet stagger">
@@ -115,10 +130,16 @@ const Servicios = () => {
               caracteriza por la defensa justa, la empatía y la búsqueda de
               acuerdos beneficiosos para mis clientes.
             </p>
-            <a href="/*" className="btn-home">
+            
+            <button
+              type="button"
+              className="btn-home"
+              onClick={() => irAFormulario("Derecho laboral")}
+            >
               Asesorarme
-            </a>
+            </button>
           </div>
+
           <div className="detalle-media stagger">
             <div className="image-frame image-frame--grid">
               <img src="../../public/manos.png" alt="Apretón de manos" />
