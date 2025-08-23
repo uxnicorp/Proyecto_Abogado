@@ -7,6 +7,15 @@
   --danger-hover: #852c2c;
 }
 
+.modal-dark,
+.modal-dark * {
+  font-family: 'Lora', serif !important;
+}
+
+.modal-dark .form-control::placeholder {
+  font-family: 'Lora', serif !important;
+}
+
 .modal-dark {
   background-color: var(--bg-modal) !important;
   color: var(--txt) !important;
