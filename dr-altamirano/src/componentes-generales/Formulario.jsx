@@ -6,6 +6,7 @@ import "sweetalert2/dist/sweetalert2.min.css";
 import "./css/Formulario.css";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+const NAME_REGEX = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
 
 const SERVICIOS_VALIDOS = ["Derecho civil", "Derecho penal", "Derecho laboral"];
 
@@ -40,14 +41,25 @@ const Formulario = () => {
 
   const validate = () => {
     const newErrors = {};
-    if (!nombre.trim()) newErrors.nombre = "El nombre es obligatorio.";
-    if (!email.trim()) newErrors.email = "El email es obligatorio.";
-    else if (!EMAIL_REGEX.test(email)) newErrors.email = "Email inválido.";
-    if (!servicio.trim()) newErrors.servicio = "Selecciona un servicio.";
-    else if (!SERVICIOS_VALIDOS.includes(servicio)) {
+
+    if (!nombre.trim()) {
+      newErrors.nombre = "El nombre es obligatorio.";
+    } else if (!NAME_REGEX.test(nombre)) {
+      newErrors.nombre = "El nombre solo puede contener letras y espacios.";
+    }    
+    if (!email.trim()) {
+      newErrors.email = "El email es obligatorio.";
+    } else if (!EMAIL_REGEX.test(email)) {
+      newErrors.email = "Email inválido.";
+    }    
+    if (!servicio.trim()) {
+      newErrors.servicio = "Selecciona un servicio.";
+    } else if (!SERVICIOS_VALIDOS.includes(servicio)) {
       newErrors.servicio = "Servicio no válido.";
+    }    
+    if (!mensaje.trim()) {
+      newErrors.mensaje = "El mensaje es obligatorio.";
     }
-    if (!mensaje.trim()) newErrors.mensaje = "El mensaje es obligatorio.";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -94,6 +106,9 @@ const Formulario = () => {
                   onChange={(e) => setNombre(e.target.value)}
                   placeholder="Ej: Guadalupe Diaz"
                   isInvalid={!!errors.nombre}
+                  required
+                  minLength={3}
+                  maxLength={20}
                 />
                 <Form.Control.Feedback type="invalid">
                   {errors.nombre}
@@ -110,6 +125,9 @@ const Formulario = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="micorreo@ejemplo.com"
                   isInvalid={!!errors.email}
+                  required
+                  minLength={13}
+                  maxLength={35}
                 />
                 <Form.Control.Feedback type="invalid">
                   {errors.email}
@@ -122,6 +140,7 @@ const Formulario = () => {
                 <Form.Label>Servicio</Form.Label>
                 <Form.Select
                   value={servicio}
+                  required
                   onChange={(e) => setServicio(e.target.value)}
                   isInvalid={!!errors.servicio}
                 >
@@ -148,6 +167,7 @@ const Formulario = () => {
                   onChange={(e) => setMensaje(e.target.value)}
                   placeholder="Contanos brevemente tu caso o consulta..."
                   isInvalid={!!errors.mensaje}
+                  required
                 />
                 <Form.Control.Feedback type="invalid">
                   {errors.mensaje}
