@@ -9,26 +9,26 @@ Incluye secciones dinámicas de inicio, servicios, testimonios de clientes y un 
 
 Proyecto_Abogado/
 └── dr-altamirano/
-├── index.html
-├── package.json
-├── vite.config.js
-└── src/
-├── App.jsx
-├── main.jsx
-├── assets/
-│ └── law-books.png
-├── componentes-generales/
-│ ├── Formulario.jsx
-│ ├── Testimonios.jsx
-│ └── css/
-│ ├── Formulario.css
-│ └── Testimonios.css
-└── paginas/
-├── Home.jsx
-├── Servicios.jsx
-└── css/
-├── Home.css
-└── Servicios.css
+    ├── index.html
+    ├── package.json
+    ├── vite.config.js
+    └── src/
+        ├── App.jsx
+        ├── main.jsx
+        ├── assets/
+        │   └── law-books.png
+        ├── componentes-generales/
+        │   ├── Formulario.jsx
+        │   ├── Testimonios.jsx
+        │   └── css/
+        │       ├── Formulario.css
+        │       └── Testimonios.css
+        └── paginas/
+            ├── Home.jsx
+            ├── Servicios.jsx
+            └── css/
+                ├── Home.css
+                └── Servicios.css
 
 ---
 
@@ -63,7 +63,8 @@ Proyecto_Abogado/
    cd Proyecto_Abogado/dr-altamirano
 2. Instalar dependencias:
    npm install
-3. Ejecutar en modo desarrollo:
+   npm i react-router-dom react react-dom react-router bootstrap react-bootstrap sweetalert2
+4. Ejecutar en modo desarrollo:
    npm run dev
 
 ---
@@ -72,4 +73,7 @@ Proyecto_Abogado/
 
 - Ailín Torrente
 - Ana Paula Soler
-  Para UXnicorp
+
+---
+
+## 🦄 Para UXnicorp
