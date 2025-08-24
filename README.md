@@ -7,6 +7,7 @@ Incluye secciones dinámicas de inicio, servicios, testimonios de clientes y un 
 
 ## 📂 Estructura del Proyecto
 
+```bash
 Proyecto_Abogado/
 └── dr-altamirano/
     ├── index.html
