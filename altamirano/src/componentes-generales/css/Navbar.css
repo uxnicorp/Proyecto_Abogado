@@ -1,0 +1,11 @@
+.image-logo{
+    height: 8vh;
+    width: auto;
+}
+.nav-links a{
+    font-family: "Lora", serif;
+    color: #222222;
+}
+.nav-links a:hover{
+    color: #8c5f45;
+}

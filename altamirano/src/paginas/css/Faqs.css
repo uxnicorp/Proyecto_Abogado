@@ -1,0 +1,96 @@
+:root{
+  --accent: #c6a17b;      /* arena/dorado */
+  --ink: #171717;         /* texto principal */
+  --paper: #f7f2ec;       /* fondo suave */               /* dorado/arena */
+  --faq-card-bg: #fff;              /* fondo cerrado */
+  --faq-active-bg: rgba(20, 12, 3, 0.14); /* fondo abierto suave */
+  --faq-active-border: rgba(198,161,123,.45);
+}
+
+/* Sección */
+.faqs-section{
+  background: #fff;
+  padding: 72px 0;
+  scroll-margin-top: 72px;
+  font-family: "Lora", serif;
+}
+
+/* Col izquierda */
+.faqs-title{
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+.faqs-lead{
+  color:#171717;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+.faqs-cta .btn-contacto{
+  background: #8c5f45;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.faqs-cta .btn-contacto:hover{
+  background: #b4816b;
+}
+
+.faqs-accordion .accordion-item{
+  border: 0;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  background: #fff;
+  transition: background-color .25s ease, border-color .25s ease;
+}
+.faqs-accordion .accordion-button{
+  font-weight: 600;
+  color: #171717;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: linear-gradient(0deg, #ffffff, #ffffff);
+}
+.faqs-accordion .accordion-button:focus{
+  box-shadow: 0 0 0 .2rem rgba(198,161,123,.25);
+}
+.faqs-accordion .accordion-item:has(.accordion-button:not(.collapsed)){
+  border-color: var(--faq-active-border);
+  box-shadow: 0 12px 28px rgba(0,0,0,.09);
+}
+
+.faqs-accordion .accordion-button:not(.collapsed){
+  background-color: #000;
+  color: #8c5f45;
+}
+
+/* que el body también tome el color activo */
+.faqs-accordion .accordion-collapse.show .accordion-body{
+  background-color: #fff;
+  transition: background-color .25s ease;
+}
+
+/* Body del item */
+.faqs-accordion .accordion-body{
+  color: #404040;
+  padding: 16px 18px 18px;
+  border-top: 1px solid rgba(0,0,0,.06);
+  transition: background-color .28s ease;
+}
+
+/* Chevron más visible al abrir */
+.faqs-accordion .accordion-button::after{
+  filter: hue-rotate(0deg) saturate(0) brightness(.35);
+  opacity: .6;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.faqs-accordion .accordion-button:not(.collapsed)::after{
+  opacity: 1;
+  transform: rotate(-180deg);
+}
+
+/* Responsive: separaciones más chicas en mobile */
+@media (max-width: 991.98px){
+  .faqs-section{ padding: 56px 0; }
+}
