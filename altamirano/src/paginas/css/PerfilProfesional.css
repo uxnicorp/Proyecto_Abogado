@@ -1,0 +1,12 @@
+.perfil-section {
+  background: #fff;
+  padding: 72px 0;
+  scroll-margin-top: 72px;
+    font-family: "Lora", serif;
+}
+
+.perfil-title{
+  color: #8c5f45;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
