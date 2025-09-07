@@ -161,7 +161,7 @@ const Formulario = () => {
           <button type="button" className="btn-cancel" onClick={handleClose}>
             Cancelar
           </button>
-          <button type="submit" className="btn-home">
+          <button type="submit" className="btn-home-form">
             Enviar consulta
           </button>
         </Modal.Footer>

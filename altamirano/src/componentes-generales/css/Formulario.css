@@ -74,7 +74,7 @@
   background-color: #1f1f1f !important;
 }
 
-.btn-home {
+.btn-home-form {
   background-color: var(--brand);
   padding: 8px 22px;
   border-radius: 4px;
@@ -86,7 +86,7 @@
   border: none;
 }
 
-.btn-home:hover {
+.btn-home-form:hover {
   background-color: var(--brand-hover);
   color: #fff;
 }
@@ -115,7 +115,7 @@
 }
 
 @media (max-width: 576px) {
-  .btn-home,
+  .btn-home-form,
   .btn-cancel {
     width: 100%;
   }
